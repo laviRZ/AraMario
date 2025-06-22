@@ -131,6 +131,7 @@ public:
 	// ----- MOVE
 	// ----- JUMP
 	void jump();
+	void superJump();
 	void startJump(int iH);
 	void resetJump();
 	// ----- JUMP

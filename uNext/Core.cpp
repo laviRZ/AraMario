@@ -70,6 +70,7 @@ CCore::CCore(void) {
 	CCFG::keyIDD = SDLK_d;
 	CCFG::keyIDSpace = SDLK_SPACE;
 	CCFG::keyIDShift = SDLK_LSHIFT;
+	CCFG::keyIDJ = SDLK_j;
 }
 
 CCore::~CCore(void) {
@@ -223,6 +224,10 @@ void CCore::InputPlayer() {
 			if(mainEvent->key.keysym.sym == CCFG::keyIDSpace) {
 				CCFG::keySpace = false;
 			}
+
+			if (mainEvent->key.keysym.sym == CCFG::keyIDJ) {
+				CCFG::keyJ = false;
+			}
 		
 			if(mainEvent->key.keysym.sym == CCFG::keyIDShift) {
 				if(keyShift) {
@@ -270,6 +275,13 @@ void CCore::InputPlayer() {
 			if(!keyShift) {
 				oMap->getPlayer()->startRun();
 				keyShift = true;
+			}
+		}
+
+		if (mainEvent->key.keysym.sym == CCFG::keyIDJ) {
+			if (!CCFG::keyJ) {
+				oMap->getPlayer()->superJump();
+				CCFG::keyJ = true;
 			}
 		}
 
@@ -354,7 +366,7 @@ void CCore::MouseInput() {
 }
 
 void CCore::resetKeys() {
-	movePressed = keyMenuPressed = keyS = keyW = keyA = keyD = CCFG::keySpace = keyShift = keyAPressed = keyDPressed = false;
+	movePressed = keyMenuPressed = keyS = keyW = keyA = keyD = CCFG::keySpace = keyShift = CCFG::keyJ = keyAPressed = keyDPressed = false;
 }
 
 void CCore::Update() {

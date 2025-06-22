@@ -265,6 +265,7 @@ void Event::Normal() {
 					}
 
 					CCFG::keySpace = false;
+					CCFG::keyJ = false;
 				}
 			} else {
 				CCore::getMap()->resetGameData();
@@ -273,6 +274,7 @@ void Event::Normal() {
 				CCore::getMap()->getPlayer()->stopMove();
 				inEvent = false;
 				CCFG::keySpace = false;
+				CCFG::keyJ = false;
 				endGame = false;
 				stepID = 0;
 			}
@@ -326,6 +328,7 @@ void Event::Normal() {
 			CCFG::getMusic()->changeMusic(true, true);
 			inEvent = false;
 			CCFG::keySpace = false;
+			CCFG::keyJ = false;
 			CCore::resetKeys();
 		}
 	}

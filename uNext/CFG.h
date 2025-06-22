@@ -21,8 +21,9 @@ public:
 	static int GAME_WIDTH, GAME_HEIGHT;
 
 	static bool keySpace;
+	static bool keyJ;
 
-	static int keyIDA, keyIDS, keyIDD, keyIDSpace, keyIDShift;
+	static int keyIDA, keyIDS, keyIDD, keyIDSpace, keyIDShift, keyIDJ;
 
 	static std::string getKeyString(int keyID);
 

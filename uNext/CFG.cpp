@@ -22,12 +22,14 @@ MenuManager* CCFG::oMM = new MenuManager();
 Music* CCFG::oMusic = new Music();
 
 bool CCFG::keySpace = false;
+bool CCFG::keyJ = false;
 
 int CCFG::keyIDA = 0;
 int CCFG::keyIDD = 0;
 int CCFG::keyIDS = 0;
 int CCFG::keyIDSpace = 0;
 int CCFG::keyIDShift = 0;
+int CCFG::keyIDJ = 0;
 
 bool CCFG::canMoveBackward = true;
 

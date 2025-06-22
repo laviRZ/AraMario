@@ -25,7 +25,7 @@ Spring::~Spring(void) {
 
 void Spring::Update() {
 	if(inAnimation) {
-		if(CCFG::keySpace) {
+		if(CCFG::keySpace || CCFG::keyJ) {
 			extraJump = true;
 			CCore::getMap()->getPlayer()->resetJump();
 			CCore::getMap()->getPlayer()->setNextFallFrameID(16);
@@ -87,6 +87,7 @@ void Spring::collisionWithPlayer(bool TOP) {
 			inAnimation = true;
 			extraJump = false;
 			CCFG::keySpace = false;
+			CCFG::keyJ = false;
 		} else {
 			if(CCore::getMap()->getPlayer()->getMoveDirection()) {
 				CCore::getMap()->getPlayer()->setXPos((float)CCore::getMap()->getPlayer()->getXPos() - CCore::getMap()->getPlayer()->getMoveSpeed());
