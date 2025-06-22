@@ -1168,6 +1168,10 @@ bool Player::getUnkillAble() {
 }
 
 void Player::setNumOfLives(int iNumOfLives) {
+	if (iNumOfLives < this->iNumOfLives) // AraMario patch 2.1
+	{
+		return;
+	}
 	this->iNumOfLives = iNumOfLives;
 }
 

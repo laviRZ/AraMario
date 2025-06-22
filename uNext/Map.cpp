@@ -9549,6 +9549,10 @@ void Map::EndBonus() {
 }
 
 void Map::playerDeath(bool animation, bool instantDeath) {
+	if (!instantDeath) // AraMario patch 2.2
+	{
+		return;
+	}
 	if((oPlayer->getPowerLVL() == 0 && !oPlayer->getUnkillAble()) || instantDeath) {
 		inEvent = true;
 

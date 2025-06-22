@@ -189,6 +189,7 @@ void CCore::InputPlayer() {
 	if(mainEvent->type == SDL_WINDOWEVENT) {
 		switch(mainEvent->window.event) {
 			case SDL_WINDOWEVENT_FOCUS_LOST:
+				break; // AraMario patch 2.3
 				CCFG::getMM()->resetActiveOptionID(CCFG::getMM()->ePasue);
 				CCFG::getMM()->setViewID(CCFG::getMM()->ePasue);
 				CCFG::getMusic()->PlayChunk(CCFG::getMusic()->cPASUE);
